@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model QNA {
+  id       Int     @id @default(autoincrement())
+  tag      String?
+  level    String
+  question String
+  answer   String
+}
